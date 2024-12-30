@@ -1,7 +1,9 @@
 package day25;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -31,6 +33,10 @@ public class Test1 {
 		List<String> tonyTeam = new ArrayList<String>();
 		tonyTeam.addAll(List.of("AA","BB","CC"));
 		orgChart.put("Tony", tonyTeam);
+		
+		List<String> jhonTeam = new ArrayList<String>();
+		jhonTeam.addAll(List.of("Jhon"));
+		orgChart.put("Jhon", jhonTeam);
 		
 		System.out.println("the CEO is:"+getCEO(orgChart));
 		System.out.println(orgChart);
@@ -111,6 +117,7 @@ public class Test1 {
 		}
 		
 	}
+	
 }
 
 
