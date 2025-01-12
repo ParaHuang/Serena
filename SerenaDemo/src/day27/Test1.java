@@ -50,8 +50,9 @@ public class Test1 {
 		//			5				hello,power,chair
 		//			8				whatever
 		Map<Integer, List<String>> map = new TreeMap<Integer, List<String>>();
+		
 		for(String e:words) {
-			int len = e.length();
+			int len = e.length();  //5
 			List<String> values =  map.get(len);
 			if(values == null) {
 				values = new ArrayList<String>();
@@ -86,20 +87,25 @@ class Student implements Comparable<Student>{
 //		this -- o  
 //		return this.grade - o.grade;  //ascending
 //		return o.grade - this.grade;  //descending
-		int reuslt1 = o.grade - this.grade;
-		if(reuslt1 == 0) {
-//			then compare last name , return the result of the comparation between last names
-//			return this.lastname.compareTo(o.lastname);
-			int result2 = this.lastname.compareTo(o.lastname);
-			if(result2 == 0) {
-				//compare first name
-				return this.firstname.compareTo(o.firstname);
-			}else {
-				return result2;
-			}
-		}else {
-			return reuslt1;
-		}
+//		int reuslt1 = o.grade - this.grade;
+//		if(reuslt1 == 0) {
+////			then compare last name , return the result of the comparation between last names
+////			return this.lastname.compareTo(o.lastname);
+//			int result2 = this.lastname.compareTo(o.lastname);
+//			if(result2 == 0) {
+//				//compare first name
+//				return this.firstname.compareTo(o.firstname);
+//			}else {
+//				return result2;
+//			}
+//		}else {
+//			return reuslt1;
+//		}
+		
+		return o.grade - this.grade != 0 ? 
+				o.grade - this.grade : this.lastname.compareTo(o.lastname)!=0 ? 
+						this.lastname.compareTo(o.lastname) : this.firstname.compareTo(o.firstname);
+		
 	}
 	
 	@Override
